@@ -13,19 +13,17 @@ public class problem1 {
             while ((text = reader.readLine()) != null) {
                 char first = '0';
                 char last = '0';
-                for(int i = 0; i<text.length()-1;i++){
+                for(int i = 0; i<text.length();i++){
                     if(Character.isDigit(text.charAt(i))){
-                        first = text.charAt(i);
-                        break;
-                    }
-                }
-                for(int i = text.length()-1; i>0;i--){
-                    if(Character.isDigit(text.charAt(i))){
+                        if(first=='0'){
+                            first = text.charAt(i);
+                        }
                         last = text.charAt(i);
-                        break;
                     }
                 }
+
                 int currValue = Integer.parseInt(""+first+last);
+                System.out.println(currValue);
                 sum+=currValue;
             }
             reader.close(); // Close the file reader after usage
